@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b035fodg8tfp7"]
+
+[ext_resource type="Script" uid="uid://ckvbdol08hs82" path="res://player/player.gd" id="1_ou4ca"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oul6g"]
+load_path = "res://.godot/imported/knight.png-708266efadfecae8e171a09210f1058d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab3tm"]
+atlas = SubResource("CompressedTexture2D_oul6g")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4v151"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab3tm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4v151"]
+size = Vector2(16, 28)
+
+[node name="player" type="CharacterBody2D" unique_id=792090552]
+script = ExtResource("1_ou4ca")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=254632340]
+sprite_frames = SubResource("SpriteFrames_4v151")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371999919]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_4v151")

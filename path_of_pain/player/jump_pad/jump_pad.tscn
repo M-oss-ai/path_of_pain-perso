@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b43ben7002je7"]
+
+[ext_resource type="Texture2D" uid="uid://iavep131ncdd" path="res://player/jump_pad/jump_pad.png" id="1_g6emj"]
+[ext_resource type="Script" uid="uid://ckqtxvxk1qwe0" path="res://player/jump_pad/jump_pad.gd" id="2_edukc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edukc"]
+atlas = ExtResource("1_g6emj")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ctja"]
+atlas = ExtResource("1_g6emj")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ai3"]
+atlas = ExtResource("1_g6emj")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_geoto"]
+atlas = ExtResource("1_g6emj")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q6ee"]
+atlas = ExtResource("1_g6emj")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3800"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edukc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ctja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ai3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_geoto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q6ee")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[node name="jump_pad" type="AnimatedSprite2D" unique_id=902491920]
+sprite_frames = SubResource("SpriteFrames_d3800")
+animation = &"idle"
+script = ExtResource("2_edukc")

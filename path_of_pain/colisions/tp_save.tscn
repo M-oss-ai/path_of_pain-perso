@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://s56rxbm8hnm5"]
+
+[ext_resource type="Script" uid="uid://culn0hfrda88k" path="res://colisions/tp_save.gd" id="1_n0mpr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0mpr"]
+size = Vector2(32, 32)
+
+[node name="tp_save" type="Area2D" unique_id=374659579]
+script = ExtResource("1_n0mpr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1838911165]
+shape = SubResource("RectangleShape2D_n0mpr")
+debug_color = Color(3.85046e-07, 0.6253894, 0.5234992, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
